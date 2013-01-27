@@ -3,7 +3,7 @@
  *  Darren Pouliot
  *  dpouliot@usc.edu
  *  ITP 109 - Spring 2013
- *  Lab 1: Prints 5 Instructions on Opening Eclipse to the Console
+ *  Lab 1: Prints 5 Instructions on Opening Eclipse
  */
 
 public class InstructionClass {
@@ -17,5 +17,5 @@ public class InstructionClass {
 		System.out.println("Step 5: Begin Coding!");
 		
 	}
-
+	
 }
