@@ -26,7 +26,8 @@ public class ConvertTemp {
 		double convertedTemp = 0;
 
 		// Sets Scale to Fahrenheit if neither "C" nor "F" is input
-		if (!scale.equalsIgnoreCase("C") && !scale.equalsIgnoreCase("F")) {
+		if (!scale.equalsIgnoreCase("C") && !scale.equalsIgnoreCase("F")) 
+		{
 			System.out.println("Invalid input. You didn't enter \'C\' or \'F\'. I'll assume you meant Fahrenheit.");
 			scale = "F";	
 		}
@@ -39,8 +40,8 @@ public class ConvertTemp {
 		if (scale.equalsIgnoreCase("F")) 
 			convertedTemp = (5 * (temperature - 32)) / 9;
 
-	// Adjusts Output for Significant Figures (ignores certainty with 0s after decimal)
-
+// Adjusts Output for Significant Figures (ignores certainty with 0s after decimal)
+// Independent of Assignment, Just for Accuracy
 		// Gets # of Digits Before Decimal
 		int intTemp = (int)temperature;
 		String intTempString = String.valueOf(intTemp);
@@ -100,17 +101,12 @@ public class ConvertTemp {
 		if (decimalPlaceCount >= 5)
 			df = new DecimalFormat("0.00000");
 
-	// Ends Significant Figure Determination Function
-		
-		// Prints out Grammatically Correct Results
-		if (temperature == 1 && convertedTemp != 1) 
-			System.out.println(temperature + " degree Fahrenheit is "  + df.format(convertedTemp) + " degrees Celsius.");
+// Ends Significant Figure Determination Function
 
-		else if (temperature != 1 && convertedTemp != 1) 
-			System.out.println(temperature + " degrees Fahrenheit is " + df.format(convertedTemp) + " degrees Celsius.");
-
-		else if (temperature != 1 && convertedTemp == 1) 
-			System.out.println(temperature + " degrees Fahrenheit is " + df.format(convertedTemp) + " degree Celsius.");
+		if (scale.equalsIgnoreCase("F")) // Prints Out Fahrenheit -> Celsius Conversion
+			System.out.println(temperature + " degrees Fahrenheit is " + df.format(convertedTemp) + " degrees Celsius");
+		else // Prints Out Celsius -> Fahrenheit Conversion
+			System.out.println(temperature + " degrees Celsius is " + df.format(convertedTemp) + " degrees Fahrenheit");
 
 		keyboard.close();
 	}
