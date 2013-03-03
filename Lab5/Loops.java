@@ -42,20 +42,21 @@ public class Loops {
 
 					// Checks if value user entered is greater than any previous (or default) value and stores it if it is
 					if (number != -1){
-						if (number >= largestNumber)
+						if (number >= largestNumber){
 							largestNumber = number;
+						}
 					}
 
 					// Displays largest number entered
-					if (number == -1) {
+					else if (number == -1 && largestNumber != -1) {
 						System.out.println("The largest number you entered was: " + largestNumber + "\n");
 						n = 1;
 					}
 
 					// Skips Output if user quits without ever entering a number
-					if (number == -1 && largestNumber == -1)
+					else if (number == -1 && largestNumber == -1) {
 						break;
-
+					}
 				}
 				break;	
 			}
@@ -86,13 +87,16 @@ public class Loops {
 					System.out.println(originalNumber + "! = " + finalNumber);
 				}
 				// Factorial Special Cases
-				if (number == 1)
+				else if (number == 1) {
 					System.out.println("1! = 1");
-				if (number == 0) 
+				}
+				else if (number == 0) {
 					System.out.println("0! = 1");
+				}
 				// User Error Statement
-				if (number < 0)
+				else if (number < 0) {
 					System.out.println("Error: Number entered is less than zero");
+				}
 
 				break;
 			}
@@ -100,9 +104,9 @@ public class Loops {
 			// Displays Error when Input is not 1, 2, or -1
 			default: {
 
-				if (input != -1)
+				if (input != -1) {
 					System.out.println("Invalid Input. Please try again.");
-
+				}
 				break;
 			}
 
